@@ -1,0 +1,62 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+#telegramBtn {
+  background-color: rgb(0, 107, 246);
+  color: white;
+  padding: 20px 40px; /* Увеличиваем отступы для увеличения размера */
+  border: none;
+  cursor: pointer;
+  font-size: 20px; /* Увеличиваем размер шрифта */
+  border-radius: 20px; /* Добавляем закругление углов */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень для объёмного эффекта */
+  position: relative;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif; /* Установка шрифта */
+  font-weight: 400; /* Начальная толщина шрифта */
+  transition: background-color 0.3s, transform 0.2s, font-weight 0.2s; /* Добавляем анимацию для font-weight */
+  width: 300px; /* Опционально: Можно указать ширину кнопки */
+  height: 60px; /* Опционально: Можно указать высоту кнопки */
+  position: relative;
+  overflow: hidden;
+  display: flex; /* Для центрирования текста по вертикали и горизонтали */
+  justify-content: center; /* Центрируем текст по горизонтали */
+  align-items: center; /* Центрируем текст по вертикали */
+}
+
+#telegramBtn::before {
+  content: '';
+  position: absolute;
+  top: -100%; /* Увеличиваем начальный размер и положение для более динамичной анимации */
+  right: -100%;
+  bottom: 0;
+  left: -100%;
+  background: rgba(255, 255, 255, 0.2); /* Более заметный блик */
+  transform: rotate(25deg);
+  transition: all 0.5s, opacity 0.5s; /* Усиливаем анимацию */
+}
+
+#telegramBtn:hover::before {
+  top: -20px;
+  right: -20px;
+  bottom: -20px;
+  left: -20px;
+  opacity: 0.5; /* Увеличиваем прозрачность для более выраженного блика */
+}
+
+#telegramBtn:hover {
+  transform: scale(
+    1.05
+  ); /* Небольшое увеличение кнопки при наведении для дополнительного эффекта */
+}
+
+#telegramBtn:focus {
+  outline: none;
+}
